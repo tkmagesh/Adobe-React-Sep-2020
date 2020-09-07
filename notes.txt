@@ -1,0 +1,59 @@
+Applications for the Browser
+    Presentation + UI Behavior + State
+
+JavaScript (ES5)
+    Data Types
+        Number, String, Boolean, Object, Undefined, Function
+
+    Language Contructs
+        var, if else, switch case, while, do, for, try catch finally, throw, function
+
+    Apis
+        Array, Date, Math, RegEx, timer (setTimeout, clearTimeout, setInterval, clearInterval), Error
+
+    Misc
+        loosely typed
+        dynamic
+        functions are objects
+            - functions can be created using function expression
+            - functions can have attributes
+            - functions can have methods
+            - function can be passed as arguments
+            - function can be returned as return values
+            - functions can be variadic
+
+            - implicit values passed to a function by default
+                - this
+                    is NOT based on where the function is / who owns the function
+                    IS based on how the function is invoked
+        
+                - arguments
+                    array like object
+                        arguments[0]
+                        arguments[1]
+                        length
+
+            Invocation patterns
+                - As a method of an object
+                    this -> object
+                
+                - As a function
+                    this -> global (window)
+
+                - Using the 'call' method of the function
+                - Using the 'apply' method of the function
+
+                
+            
+
+
+Class Employee
+    int id;
+    string name;
+    decimal salary;
+
+
+Employee emp = new Employee();
+emp.id = 100;
+emp.city = 'Bangalore';
+
