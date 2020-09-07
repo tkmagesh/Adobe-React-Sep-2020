@@ -55,8 +55,8 @@ Constructor Functions
 
 
 Prototypal Inheritance
-    
-                
+
+=> http://bit.ly/javascript-training-videos
             
 
 
