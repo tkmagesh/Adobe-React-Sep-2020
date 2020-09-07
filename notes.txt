@@ -36,13 +36,26 @@ JavaScript (ES5)
             Invocation patterns
                 - As a method of an object
                     this -> object
-                
                 - As a function
                     this -> global (window)
-
                 - Using the 'call' method of the function
                 - Using the 'apply' method of the function
+                - As an IIFE (Immediately Invoked Function Expression)
 
+            Pure functions
+                - functions with NO side effects
+                - the invocation of the function can be replaced by the result of the function
+                - memoization
+
+Constructor Functions
+    Functions that behave like classes
+    Invoked using the 'new' keyword
+        - this -> a new object
+        - this -> returned by default
+
+
+Prototypal Inheritance
+    
                 
             
 
