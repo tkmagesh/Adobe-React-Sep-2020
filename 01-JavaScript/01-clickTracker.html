@@ -6,17 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Click Tracker</title>
     <script>
-        var counter = 0;
-        function onBtnTrackClick(){
-            ++counter;
-            var divCounter = document.getElementById('divCounter');
-            divCounter.innerText = counter;
-        }
-        function onDocumentLoad(){
-            var btnTrack = document.getElementById('btnTrack');
-            btnTrack.addEventListener('click', onBtnTrackClick);
-        }
-        window.addEventListener('load', onDocumentLoad);
+        (function myApp(){
+            var counter = 0;
+            function onBtnTrackClick(){
+                ++counter;
+                var divCounter = document.getElementById('divCounter');
+                divCounter.innerText = counter;
+            }
+            function onDocumentLoad(){
+                var btnTrack = document.getElementById('btnTrack');
+                btnTrack.addEventListener('click', onBtnTrackClick);
+            }
+            window.addEventListener('load', onDocumentLoad);
+        })();
+        //myApp();
     </script>
 
 </head>
