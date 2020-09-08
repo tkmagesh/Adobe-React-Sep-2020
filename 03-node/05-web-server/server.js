@@ -1,9 +1,10 @@
 const http = require('http'),
     fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+    chalk = require('chalk');
 
 const server = http.createServer(function(req /* IncomingMessage */, res /* ServerResponse */){
-    console.log(req.url);
+    console.log(chalk.yellow(req.method) + '\t' + chalk.green(req.url));
     /* 
     res.write('<h1>Welcome to Node.js!</h1>');
     res.end(); 
@@ -28,4 +29,4 @@ const server = http.createServer(function(req /* IncomingMessage */, res /* Serv
 
 server.listen(8080);
 
-server.on('listening', () => console.log('Server listening on port 8080'));
+server.on('listening', () => console.log(chalk.magenta('Server listening on port 8080')));

@@ -158,3 +158,18 @@ Node.js
                 multiply(10)
                 divide(2)
                 console.log(accumulator.getResult()) => 250
+
+
+
+    Package.js
+        manifest file containing the metadata information about the application
+        scripts
+        dependencies
+
+        to create run the command "npm init"
+
+    npm (node package manager)
+
+    npm install chalk
+    npm install nodemon
+    
