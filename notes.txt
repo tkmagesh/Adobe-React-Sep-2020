@@ -129,3 +129,32 @@ http://es6-features.org
 Assignment
     Array Methods : reduce, map, filter, forEach
 
+Node.js
+    JavaScript Runtime
+    Single Threaded (Our application will be executed in ONLY ONE thread)
+    Single Threaded Event Loop
+        (http://bit.ly/node-training-videos)
+
+    REPL
+        Read Evaluate Print Loop
+
+    CommonJS module system
+        Everything in a .js is considered private
+        Any public object should be assigned to module.exports (default value is an object ({}))
+        Any public object from other module should be imported using 'require' function
+        
+    Assignment
+        accumulator.js
+            add(x)
+            subtract(x)
+            multiply(x)
+            divide(x)
+            getResult()
+
+        accumulatorClient.js
+            import accumulator
+                add(100)
+                subtract(50)
+                multiply(10)
+                divide(2)
+                console.log(accumulator.getResult()) => 250
