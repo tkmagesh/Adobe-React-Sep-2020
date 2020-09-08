@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+        $(function(){
+            $('#btnAddNew').click(function(){
+                var productName = $('#txtProductName').val();
+                /* var $li = $('<li></li>');
+                $li.text(productName);
+                $('#productList').append($li); */
+                $('<li></li>')
+                    .text(productName)
+                    .appendTo('#productList')
+                    .hide()
+                    .click(function(evt){
+                        $(evt.target)
+                            .fadeOut('slow', function(){
+                                $(this).remove();
+                            })
+                            
+                    })
+                    .fadeIn();
+            });
+        })
+    
+    </script>
+</head>
+<body>
+    <h1>Products</h1>
+    <hr>
+    <label for="">Product :</label>
+    <input type="text" name="" id="txtProductName">
+    <input type="button" value="Add New" id="btnAddNew">
+    <ol id="productList"></ol>
+</body>
+</html>

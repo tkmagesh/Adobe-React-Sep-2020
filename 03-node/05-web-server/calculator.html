@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+        /* $(function(){
+           $('#btnAdd').click(function(){
+               var n1 = parseInt($('#txtN1').val()),
+                   n2 = parseInt($('#txtN2').val()),
+                   result = n1 + n2;
+                $('#divResult').text(result);
+           });
+        }); */
+
+        $(function(){
+            /* $('input[type="button"]') */
+            /* $('input:button') */
+            $(':button').click(function(evt){
+                var n1 = parseInt($('#txtN1').val()),
+                    n2 = parseInt($('#txtN2').val());
+                var result = 0;
+                switch ($(evt.target).val()) {
+                    case 'Add':
+                        result = n1 + n2;
+                        break;
+                    case 'Subtract':
+                        result = n1 - n2;
+                        break;
+                    case 'Multiply':
+                        result = n1 * n2;
+                        break;
+                    case 'Divide':
+                        result = n1 / n2;
+                        break;
+                
+                    default:
+                        break;
+                }
+                $('#divResult').text(result);
+            })
+        })
+    
+    </script>
+
+</head>
+<body>
+    <h1>Calculator</h1>
+    <hr>
+    <input type="number" name="" id="txtN1">
+    <input type="number" name="" id="txtN2">
+    <br>
+    <input type="button" value="Add" id="btnAdd">
+    <input type="button" value="Subtract">
+    <input type="button" value="Multiply">
+    <input type="button" value="Divide">
+    <div id="divResult">0</div>
+</body>
+</html>
