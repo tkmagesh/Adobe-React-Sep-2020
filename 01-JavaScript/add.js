@@ -1,3 +1,4 @@
+/* ES5 */
 function add(){
     function parseArg(n){
         if (typeof n === 'function') return parseArg(n());
@@ -6,6 +7,17 @@ function add(){
     }
     return arguments.length <= 1 ? parseArg(arguments[0]) : parseArg(arguments[0]) + add(Array.prototype.slice.call(arguments, 1));
 }
+
+/* ES6 */
+function add(...args) {
+    function parseArg(n) {
+        if (typeof n === 'function') return parseArg(n());
+        if (Array.isArray(n)) return add(...n);
+        return isNaN(n) ? 0 : parseInt(n);
+    }
+    return args.length <= 1 ? parseArg(args[0]) : parseArg(args[0]) + add(args.slice(1));
+}
+
 
 add(10,20)
 add(10, "20")
