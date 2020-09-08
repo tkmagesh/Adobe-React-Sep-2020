@@ -19,10 +19,12 @@
                     .hide()
                     .click(function(evt){
                         $(evt.target)
-                            .fadeOut()
-                            .remove();
+                            .fadeOut('slow', function(){
+                                $(this).remove();
+                            })
+                            
                     })
-                    .fadeIn()
+                    .fadeIn();
             });
         })
     
