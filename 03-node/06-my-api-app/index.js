@@ -5,10 +5,12 @@ const chalk = require('chalk');
 
 const app = express();
 const productsRoutes = require('./routes/productRoutes');
-
+const indexRoutes = require('./routes/indexRoutes.js')
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use('/', indexRoutes);
 app.use('/products', productsRoutes);
 
 app.use(function(req, res, next){
