@@ -59,16 +59,15 @@
                                 labelText = "DA :"
                                 onValueChange = { (value) => this.setState({da : value }) }
                             />
-                            
-                            <div className="field">
-                                <label htmlFor="rangeTax">Tax :</label>
-                                <input type="range" id="rangeTax" min="0" max="30" 
-                                    onChange={ evt => this.setState({ tax : parseInt(evt.target.value)})}
-                                />
-                            </div>
+                            <SalaryCalculatorInput
+                                labelText = "Tax :"
+                                type="range"  min="0" max="30" defaultValue="0"
+                                onValueChange = { (value) => this.setState({tax : value }) }
+                            />
                             <div className="field">
                                 <input type="button" value="Calculate" onClick={this.onBtnCalculateClick}/>
                             </div>
+
                             <SalaryCalculatorResult data={this.state}/>
                         </section>
                     </div>
@@ -78,14 +77,15 @@
 
         class SalaryCalculatorInput extends React.Component{
             render(){
-                const { labelText, onValueChange } = this.props;
+                const { labelText, onValueChange, type='number', ...restProps } = this.props;
                 return(
                     <div className="field">
                         <label htmlFor="txtInput">{labelText}</label>
                         <input 
-                            type="number" 
+                            type={type} 
                             id="txtInput" 
                             onChange={ evt => onValueChange(parseInt(evt.target.value))}
+                            {...restProps}
                         />
                     </div>
                 );
