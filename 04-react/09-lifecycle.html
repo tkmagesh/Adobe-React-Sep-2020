@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lifecycle Events</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+        class TimerContainer extends React.Component{
+            state = { 
+                showTimer : false
+            };
+
+            render(){
+                return(
+                    <div>
+                        <h1>Timer</h1>
+                        <label>Show Timer</label>
+                        <input type="checkbox" onChange={ evt => this.setState({ showTimer : evt.target.checked})}/>
+                        { this.state.showTimer && <Timer/> }
+                    </div>
+                );
+            }
+        }
+        class Timer extends React.Component{
+            state = { 
+                currentTime: (new Date()).toTimeString()
+            };
+            timer = null;
+
+            componentDidMount(){
+                console.log('Timer mounted');
+                this.timer = setInterval(() => {
+                    this.setState({ currentTime: (new Date()).toTimeString() });
+                }, 1000);
+            }
+
+            componentWillUnmount(){
+                console.log('Timer will unmount');
+                if (this.timer)
+                    clearInterval(this.timer);
+            }
+            render(){
+                const { currentTime } = this.state;
+                return(
+                    <div>{currentTime}</div>
+                )
+            }
+        }
+        
+        ReactDOM.render(<TimerContainer />, document.getElementById('root'));
+
+    </script>
+</head>
+<body>
+    <div id="root">
+
+
+    </div>
+</body>
+</html>

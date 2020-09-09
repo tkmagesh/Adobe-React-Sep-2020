@@ -204,3 +204,17 @@ React
         <input type="button" value="Multiply">
         <input type="button" value="Divide">
         <div></div>
+
+    Component Lifecycle events
+        Mounting
+            componentWillMount
+            componentDidMount
+
+        Updating
+            componentShouldUpdate
+            componentWillUpdate
+            render
+            componentDidUpdate
+            
+        Unmounting
+            componentWillUnmount
