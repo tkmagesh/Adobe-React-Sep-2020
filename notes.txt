@@ -180,8 +180,16 @@ React
     Model View Synchronization
     Virtual DOM (Rendering Performance)
 
+    Application = composition of components
+    Component -> Represents ONE part of the UI encapsulating Presentation + Behavior + State
+        -> can be created as a class / function
+        
+
     react.js
         top level object -> React
 
     react-dom.js
         top level object -> ReactDOM
+
+    babel
+        XML -> JS
