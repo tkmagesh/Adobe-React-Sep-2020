@@ -183,7 +183,7 @@ React
     Application = composition of components
     Component -> Represents ONE part of the UI encapsulating Presentation + Behavior + State
         -> can be created as a class / function
-        
+
 
     react.js
         top level object -> React
@@ -193,3 +193,14 @@ React
 
     babel
         XML -> JS
+
+    Create a component for the below
+        <h1>Calculator</h1>
+        <hr>
+        <input type="number" name="" id="">
+        <input type="number" name="" id="">
+        <input type="button" value="Add">
+        <input type="button" value="Subtract">
+        <input type="button" value="Multiply">
+        <input type="button" value="Divide">
+        <div></div>
