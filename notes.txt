@@ -173,3 +173,15 @@ Node.js
     npm install chalk
     npm install nodemon
     
+React
+    Library for building Rich Internet Application (Single Page Applications)
+    Presentation + UI Behavior + State
+
+    Model View Synchronization
+    Virtual DOM (Rendering Performance)
+
+    react.js
+        top level object -> React
+
+    react-dom.js
+        top level object -> ReactDOM
