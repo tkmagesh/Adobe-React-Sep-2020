@@ -254,3 +254,12 @@ React Hooks
         - useRef
         - useMemo
         - useReducer
+
+
+npm install yarn -g
+
+to create a new react application
+    npx create-react-app my-app
+        OR
+    yarn create react-app my-app
+

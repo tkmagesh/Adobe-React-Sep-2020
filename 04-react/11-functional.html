@@ -27,32 +27,6 @@
             )
         }
 
-        /* class Timer extends React.Component{
-            state = { 
-                currentTime: (new Date()).toTimeString()
-            };
-            timer = null;
-
-            componentDidMount(){
-                console.log('Timer mounted');
-                this.timer = setInterval(() => {
-                    this.setState({ currentTime: (new Date()).toTimeString() });
-                }, 1000);
-            }
-
-            componentWillUnmount(){
-                console.log('Timer will unmount');
-                if (this.timer)
-                    clearInterval(this.timer);
-            }
-            render(){
-                const { currentTime } = this.state;
-                return(
-                    <div>{currentTime}</div>
-                )
-            }
-        } */
-
         const Timer = () => {
             const [currentTime, setCurrentTime] = React.useState(new Date().toTimeString());
             React.useEffect( () => {
@@ -71,9 +45,21 @@
             )
         }
 
+        const TimerContainer = () => {
+            const [showTimer, setShowTimer] = React.useState(false);
+            return(
+                <div>
+                    <h1>Timer</h1>
+                    <label>Show Timer</label>
+                    <input type="checkbox" onChange={ evt => setShowTimer(evt.target.checked)} />
+                    { showTimer && <Timer/> }
+                </div>
+            )
+        }
+
         ReactDOM.render(
             /* <Greeter template="Have a nice day!"/> */
-            <Timer />
+            <TimerContainer />
         , document.getElementById('root'));
     
     </script>
