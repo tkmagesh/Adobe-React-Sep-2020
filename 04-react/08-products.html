@@ -21,6 +21,10 @@
                     <div>
                         <h1>Products</h1>
                         <hr/>
+                        <div>
+                            <span>Products Count : </span>
+                            <span>{productNames.length}</span>
+                        </div>
                         <label>Product :</label>
                         <input type="text" onChange={ evt => this.setState({newProductName: evt.target.value})} />
                         <input type="button" value="Add New" 
