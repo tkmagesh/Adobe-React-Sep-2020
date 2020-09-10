@@ -268,3 +268,9 @@ to install redux
         OR
     yarn add redux
 
+React-Redux
+    to Install - yarn add react-redux (OR) npm install react-redux
+    
+    useDispatch - to get access to the dispatch method of the store
+    useSelector - to get access to the state from the store
+    Provider - coordinate with the store

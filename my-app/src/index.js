@@ -6,11 +6,19 @@ import * as serviceWorker from './serviceWorker';
 import store from './store';
 import Spinner from './Spinner';
 import spinnerActionCreators from './Spinner/actions';
+import { Provider } from 'react-redux';
 
+ReactDOM.render(
+  <Provider store={store}>
+      <Spinner/>
+  </Provider>
+  , document.getElementById('root')
+);
+
+/* 
 function renderApp() {
   const value = store.getState();
   ReactDOM.render(
-    /* <Spinner value={value} dispatch={store.dispatch} up={spinnerActionCreators.up} down={spinnerActionCreators.down}/> */
     <Spinner
       value={value}
       dispatch={store.dispatch}
@@ -20,7 +28,7 @@ function renderApp() {
   );
 }
 renderApp();
-store.subscribe(renderApp);
+store.subscribe(renderApp); */
 
 /* ReactDOM.render(
   <React.StrictMode>
