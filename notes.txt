@@ -263,3 +263,8 @@ to create a new react application
         OR
     yarn create react-app my-app
 
+to install redux
+    npm install redux
+        OR
+    yarn add redux
+

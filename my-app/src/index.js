@@ -3,16 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import store from './store';
+import Spinner from './Spinner';
+import spinnerActionCreators from './Spinner/actions';
 
-import { add } from './calc';
-console.log(add(100,200));
+function renderApp() {
+  const value = store.getState();
+  ReactDOM.render(
+    /* <Spinner value={value} dispatch={store.dispatch} up={spinnerActionCreators.up} down={spinnerActionCreators.down}/> */
+    <Spinner
+      value={value}
+      dispatch={store.dispatch}
+      {...spinnerActionCreators}
+    />,
+    document.getElementById("root")
+  );
+}
+renderApp();
+store.subscribe(renderApp);
 
-ReactDOM.render(
+/* ReactDOM.render(
   <React.StrictMode>
     <App/>
   </React.StrictMode>,
   document.getElementById('root')
-);
+); */
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
