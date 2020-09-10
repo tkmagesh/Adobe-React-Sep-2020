@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Redux Intro</title>
+    <script src="redux.js"></script>
+    <!-- 
+        function spinnerReducer(currentState = 0, action){
+            if (action.type === 'UP') return currentState + 1;
+            if (action.type === 'DOWN') return currentState - 1;
+            return currentState;
+        }
+        var store = Redux.createStore(spinnerReducer)
+        store.getState()
+        
+        var up_action = { type : 'UP' }, down_action = { type : 'DOWN' }
+        store.dispatch(up_action)
+        store.getState()
+        
+        store.subscribe(() => console.log(`current state = ${store.getState()}`))
+
+        => dispatch a few more actions and notice the behavior
+     -->
+</head>
+<body>
+    <input type="button" value="Down"/>
+    <span> [ 0 ] </span>
+    <input type="button" value="Up" />
+</body>
+</html>

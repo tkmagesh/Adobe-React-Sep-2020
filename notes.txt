@@ -218,3 +218,28 @@ React
             
         Unmounting
             componentWillUnmount
+
+    
+When Component State is used
+    - Localizing the data for that component
+    - Any changes to that data can be recognized by that component and its children
+    - Bug recogizing the changes outside the component will be difficult
+
+    Suggestion:
+        Use the component state ONLY for UI data (or any data that WONT have a need to be used in other parts of the application)
+
+State
+    - UI State
+        To support the presentation of the application
+        Can be kept in the component state
+
+    - Application State
+        To support the core application logic
+        SHOULD NOT BE kept in the component state
+
+Flux
+    Architectural guideline to manage the application state
+
+Redux
+    www.redux.js.org
+    library - https://unpkg.com/redux/dist/redux.js
