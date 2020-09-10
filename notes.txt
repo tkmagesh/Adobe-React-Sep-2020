@@ -243,3 +243,14 @@ Flux
 Redux
     www.redux.js.org
     library - https://unpkg.com/redux/dist/redux.js
+
+
+React Hooks
+    functions that helps functional components to manage state, handle life cycle events
+    hook function names are prefixed with 'use'
+    Built-in hooks
+        - useState
+        - useEffect
+        - useRef
+        - useMemo
+        - useReducer

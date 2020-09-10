@@ -27,8 +27,53 @@
             )
         }
 
+        /* class Timer extends React.Component{
+            state = { 
+                currentTime: (new Date()).toTimeString()
+            };
+            timer = null;
+
+            componentDidMount(){
+                console.log('Timer mounted');
+                this.timer = setInterval(() => {
+                    this.setState({ currentTime: (new Date()).toTimeString() });
+                }, 1000);
+            }
+
+            componentWillUnmount(){
+                console.log('Timer will unmount');
+                if (this.timer)
+                    clearInterval(this.timer);
+            }
+            render(){
+                const { currentTime } = this.state;
+                return(
+                    <div>{currentTime}</div>
+                )
+            }
+        } */
+
+        const Timer = () => {
+            const [currentTime, setCurrentTime] = React.useState(new Date().toTimeString());
+            React.useEffect( () => {
+                //this function will be executed whenever the component is mounted & updated
+                const timerId = setInterval(() => {
+                    setCurrentTime((new Date()).toTimeString());
+                }, 1000);
+                return () => {
+                    //this function will be executed whenever the component is unmounted
+                    if (timerId)
+                        clearInterval(timerId);
+                }
+            }, [] /* list the dependencies which when changed we want the component to updated */);
+            return(
+                <div>{currentTime}</div>
+            )
+        }
+
         ReactDOM.render(
-            <Greeter template="Have a nice day!"/>
+            /* <Greeter template="Have a nice day!"/> */
+            <Timer />
         , document.getElementById('root'));
     
     </script>
