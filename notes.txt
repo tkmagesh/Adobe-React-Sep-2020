@@ -274,3 +274,47 @@ React-Redux
     useDispatch - to get access to the dispatch method of the store
     useSelector - to get access to the state from the store
     Provider - coordinate with the store
+
+json-server
+    a node module that can mimic a restful service using the data from a json file
+
+    from the folder where the db.json file exists
+        - npx json-server db.json -p 3030
+
+Promise
+    - easy to delegate the result to another entity
+    - An object desingned to hold the result of an async operation
+    - Using a promise to communicate the result help in delegation
+    - Promise
+        - then(callbackFn) => callbackFn executed when the operation is successful
+                => returns a new promise
+        - catch(callbackFn) => callbackFn is executed when the operation is a failure
+
+
+    Example
+        function getRemoteBugs(){
+            return axios
+                .get('http://localhost:3030/bugs')
+                .then(function(response){
+                    return response.data;
+                });
+        }
+        function printBugs(){
+            getRemoteBugs()
+                .then(function(bugs){
+                    console.table(bugs);
+                });
+        }
+
+
+        //Using "async await"
+
+        async function getRemoteBugs(){
+            const response = await axios.get('http://localhost:3030/bugs')
+            return response.data;  
+        }
+        
+        async function printBugs(){
+            const bugs = await getRemoteBugs();
+            console.table(bugs);
+        }

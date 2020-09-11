@@ -8,6 +8,10 @@ import Spinner from './Spinner';
 import spinnerActionCreators from './Spinner/actions';
 import { Provider } from 'react-redux';
 import BugTracker from './bugTracker';
+
+import axios from 'axios';
+window['axios'] = axios;
+
 ReactDOM.render(
   <Provider store={store}>
       <h1>My App</h1>
