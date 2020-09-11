@@ -6,6 +6,7 @@ const Spinner = () => {
   const [delta, setDelta] = useState(0);
   const value = useSelector( storeState => storeState.spinnerState );
   const dispatch = useDispatch();
+  console.log(dispatch);
   const { up, down } = spinnerActionCreators;
 
   return (

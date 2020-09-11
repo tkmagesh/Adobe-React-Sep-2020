@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-function getLocalBugs(){
+/* function getLocalBugs(){
     return [
       {
         id: 1,
@@ -29,7 +29,7 @@ function getRemoteBugs(){
         .then(function(response){
             return response.data;
         })
-}
+} */
 //synchronous action
 /* function load() {
     const bugs = getLocalBugs();
@@ -49,11 +49,11 @@ function getRemoteBugs(){
     }   
 } */
 
-const load = () => async (dispatch) => {
+/* const load = () => async (dispatch) => {
   const bugs = await getRemoteBugs();
   const action = { type: "LOAD_BUGS", payload: bugs};
   dispatch(action);
-}
+} */
 
 //asynchronous action (handled by promiseMiddleware)
 /* function load() {
@@ -73,5 +73,14 @@ const load = async () => {
 }
 
 */
+
+
+import bugApi from '../services/bugApi';
+
+const load = () => async (dispatch) => {
+  const bugs = await bugApi.getAll();
+  const action = { type: "LOAD_BUGS", payload: bugs};
+  dispatch(action);
+}
 
 export default load;

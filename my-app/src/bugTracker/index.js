@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './index.css';
 import bugActionCreators from './actions';
@@ -6,8 +6,8 @@ import bugActionCreators from './actions';
 const BugTracker = () => {
     const bugs = useSelector(storeState => storeState.bugsState );
     const dispatch = useDispatch();
-    const { load } = bugActionCreators;
-    
+    const { load, addNew } = bugActionCreators;
+    const [ newBugName, setNewBugName ] = useState('');
     useEffect(() => {
         dispatch(load());
     }, [dispatch, load]);
@@ -45,8 +45,8 @@ const BugTracker = () => {
             </section>
             <section className="edit">
                 <label htmlFor="">Bug Name :</label>
-                <input type="text" name="" id="" />
-                <input type="button" value="Add New" />
+                <input type="text" onChange={ evt => setNewBugName(evt.target.value) } />
+                <input type="button" value="Add New" onClick = { () => dispatch(addNew(newBugName)) }/>
             </section>
             <section className="list">
                 <ol>
