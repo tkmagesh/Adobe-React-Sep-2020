@@ -6,7 +6,7 @@ import bugActionCreators from './actions';
 const BugTracker = () => {
     const bugs = useSelector(storeState => storeState.bugsState );
     const dispatch = useDispatch();
-    const { load, addNew } = bugActionCreators;
+    const { load, addNew, toggle, remove} = bugActionCreators;
     const [ newBugName, setNewBugName ] = useState('');
     useEffect(() => {
         dispatch(load());
@@ -15,13 +15,16 @@ const BugTracker = () => {
     const bugItems = bugs.map(bug => {
         return (
         <li key={bug.id}>
-            <span className={ 'bugname ' + (bug.isClosed ? 'closed' : '')}>
+            <span 
+                className={ 'bugname ' + (bug.isClosed ? 'closed' : '')}
+                onClick={() => dispatch(toggle(bug))}
+                >
                 {bug.name}
             </span>
             <div className="datetime">
                 {bug.createdAt.toString()}
             </div>
-            <input type="button" value="Remove" />
+            <input type="button" value="Remove" onClick={() => dispatch(remove(bug))}/>
         </li>
         )
     });
