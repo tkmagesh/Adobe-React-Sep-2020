@@ -10,7 +10,7 @@ function bugsReducer(currentState = initialState, action){
     }
     if (action.type === 'REPLACE_BUG'){
       const bugToReplace = action.payload;
-      const newState = currentState.map(bug => bug.id == bugToReplace.id ? bugToReplace : bug);
+      const newState = currentState.map(bug => bug.id === bugToReplace.id ? bugToReplace : bug);
       return newState;
     }
     if (action.type === 'REMOVE_BUG'){

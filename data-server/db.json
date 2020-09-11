@@ -1,25 +1,5 @@
 {
-  "bugs": [
-    {
-      "id": 1,
-      "name": "This is a new bug",
-      "isClosed": true,
-      "createdAt": "2020-09-05T04:40:47.470Z",
-      "project_id": 1
-    },
-    {
-      "id": 3,
-      "name": "server communicaiton failure",
-      "isClosed": false,
-      "createdAt": "2020-09-11T09:49:38.650Z"
-    },
-    {
-      "id": 4,
-      "name": "users are deleted",
-      "isClosed": false,
-      "createdAt": "2020-09-11T09:51:17.404Z"
-    }
-  ],
+  "bugs": [],
   "projects": [
     {
       "id": 1,

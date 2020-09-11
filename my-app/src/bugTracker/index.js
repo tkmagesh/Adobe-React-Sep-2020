@@ -6,7 +6,7 @@ import bugActionCreators from './actions';
 const BugTracker = () => {
     const bugs = useSelector(storeState => storeState.bugsState );
     const dispatch = useDispatch();
-    const { load, addNew, toggle, remove} = bugActionCreators;
+    const { load, addNew, toggle, remove, removeClosed } = bugActionCreators;
     const [ newBugName, setNewBugName ] = useState('');
     useEffect(() => {
         dispatch(load());
@@ -55,7 +55,7 @@ const BugTracker = () => {
                 <ol>
                     {bugItems}
                 </ol>
-                <input type="button" value="Remove Closed" />
+                <input type="button" value="Remove Closed" onClick={() => dispatch(removeClosed())} />
             </section>
         </Fragment>
     )
