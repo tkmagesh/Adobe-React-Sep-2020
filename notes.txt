@@ -313,8 +313,13 @@ Promise
             const response = await axios.get('http://localhost:3030/bugs')
             return response.data;  
         }
-        
+
         async function printBugs(){
             const bugs = await getRemoteBugs();
             console.table(bugs);
         }
+
+
+Middlewares in Redux
+    functions where the common logic to be performed for ALL the actions in the application
+    

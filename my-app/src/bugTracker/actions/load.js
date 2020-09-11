@@ -31,18 +31,23 @@ function getRemoteBugs(){
         })
 }
 
-function load(dispatch){
+function load(){
     /* 
     const bugs = getLocalBugs();
     const action = { type : 'LOAD_BUGS', payload : bugs };
     return action; 
     */
+    /* return function(dispatch){
+        return getRemoteBugs()
+            .then(function(bugs){
+                const action = { type: "LOAD_BUGS", payload: bugs };
+                dispatch(action);
+            });
+    } */
 
-    return getRemoteBugs()
-        .then(function(bugs){
-            const action = { type: "LOAD_BUGS", payload: bugs };
-            dispatch(action);
-        });
+    const bugs = getLocalBugs();
+    const action = { type: "LOAD_BUGS", payload: bugs };
+    return action; 
     
 }
 

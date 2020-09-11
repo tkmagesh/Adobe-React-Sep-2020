@@ -9,8 +9,7 @@ const BugTracker = () => {
     const { load } = bugActionCreators;
     
     useEffect(() => {
-        //dispatch(load());
-        load(dispatch);
+        dispatch(load());
     }, [dispatch, load]);
 
     const bugItems = bugs.map(bug => {
