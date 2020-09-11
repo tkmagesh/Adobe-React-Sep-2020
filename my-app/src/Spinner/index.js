@@ -4,7 +4,7 @@ import spinnerActionCreators from './actions';
 
 const Spinner = () => {
   const [delta, setDelta] = useState(0);
-  const value = useSelector( storeState => storeState );
+  const value = useSelector( storeState => storeState.spinnerState );
   const dispatch = useDispatch();
   const { up, down } = spinnerActionCreators;
 

@@ -1,4 +1,6 @@
 import { createStore } from 'redux';
-import spinnerReducer from '../reducers/spinnerReducer';
-const store = createStore(spinnerReducer);
+import rootReducer from '../reducers';
+
+const store = createStore(rootReducer);
+
 export default store;
