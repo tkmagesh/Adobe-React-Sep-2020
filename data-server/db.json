@@ -1,0 +1,31 @@
+{
+  "bugs": [
+    {
+      "id": 1,
+      "name": "This is a new bug",
+      "isClosed": true,
+      "createdAt": "2020-09-05T04:40:47.470Z",
+      "project_id" : 1
+    },
+    {
+      "id": 2,
+      "name": "This is another new bug",
+      "isClosed": false,
+      "createdAt": "2020-09-05T05:21:44.685Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Payroll Master"
+    },
+    {
+      "id": 2,
+      "name": "Expense Manager"
+    },
+    {
+      "id": 3,
+      "name": "Test Manager"
+    }
+  ]
+}
