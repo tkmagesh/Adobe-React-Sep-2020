@@ -323,3 +323,5 @@ Promise
 Middlewares in Redux
     functions where the common logic to be performed for ALL the actions in the application
     
+    redux-logger (loggerMiddleware)
+    redux-thunk (asyncMiddleware)

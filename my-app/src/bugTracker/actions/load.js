@@ -30,25 +30,48 @@ function getRemoteBugs(){
             return response.data;
         })
 }
-
-function load(){
-    /* 
+//synchronous action
+/* function load() {
     const bugs = getLocalBugs();
     const action = { type : 'LOAD_BUGS', payload : bugs };
     return action; 
-    */
-    /* return function(dispatch){
+}
+ */
+
+//asynchronous action (handled by asyncMiddleware/redux-thunk)
+ /* function load(){
+     return function(dispatch){
         return getRemoteBugs()
             .then(function(bugs){
                 const action = { type: "LOAD_BUGS", payload: bugs };
                 dispatch(action);
             });
-    } */
+    }   
+} */
 
-    const bugs = getLocalBugs();
-    const action = { type: "LOAD_BUGS", payload: bugs };
-    return action; 
-    
+const load = () => async (dispatch) => {
+  const bugs = await getRemoteBugs();
+  const action = { type: "LOAD_BUGS", payload: bugs};
+  dispatch(action);
 }
+
+//asynchronous action (handled by promiseMiddleware)
+/* function load() {
+    return getRemoteBugs()
+      .then(function(bugs) {
+        const action = { type: "LOAD_BUGS", payload: bugs };
+        return action;
+      });
+} */
+
+//Simplified version of the above
+/* 
+const load = async () => {
+  const bugs = await getRemoteBugs();
+  const action = { type: "LOAD_BUGS", payload: bugs };
+  return action;
+}
+
+*/
 
 export default load;
