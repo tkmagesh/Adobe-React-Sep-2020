@@ -1,5 +1,12 @@
 {
-  "bugs": [],
+  "bugs": [
+    {
+      "id": 1,
+      "name": "Bug - 1",
+      "isClosed": true,
+      "createdAt": "2020-09-11T11:14:56.792Z"
+    }
+  ],
   "projects": [
     {
       "id": 1,
