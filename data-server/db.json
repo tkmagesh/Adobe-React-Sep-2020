@@ -3,8 +3,15 @@
     {
       "id": 1,
       "name": "Bug - 1",
-      "isClosed": true,
-      "createdAt": "2020-09-11T11:14:56.792Z"
+      "isClosed": false,
+      "createdAt": "2020-09-11T11:14:56.792Z",
+      "project_id" : 1
+    },
+    {
+      "id": 2,
+      "name": "Bug - 2",
+      "isClosed": false,
+      "createdAt": "2020-09-11T11:36:06.828Z"
     }
   ],
   "projects": [

@@ -325,3 +325,17 @@ Middlewares in Redux
     
     redux-logger (loggerMiddleware)
     redux-thunk (asyncMiddleware)
+
+Assignment:
+    
+    Implement pagination for bugs
+
+    Adding, and Listing for projects
+
+    Display the projects in the bugEdit component (in the dropdown list box)
+        so that a bug can be created for a particular project
+        the bug data will have the corresponding project_id
+
+    Each project (in projects module) should display a link (...Bugs)
+        when this link is clicked, navigate to the bugTracker module displaying ONLY the bugs for the selected project
+
