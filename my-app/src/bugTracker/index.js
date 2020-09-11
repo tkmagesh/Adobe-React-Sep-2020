@@ -1,9 +1,18 @@
-import React, { Fragment } from 'react';
-import { useSelector } from 'react-redux';
+import React, { Fragment, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './index.css';
+import bugActionCreators from './actions';
 
 const BugTracker = () => {
     const bugs = useSelector(storeState => storeState.bugsState );
+    const dispatch = useDispatch();
+    const { load } = bugActionCreators;
+    
+    useEffect(() => {
+        //dispatch(load());
+        load(dispatch);
+    }, [dispatch, load]);
+
     const bugItems = bugs.map(bug => {
         return (
         <li key={bug.id}>

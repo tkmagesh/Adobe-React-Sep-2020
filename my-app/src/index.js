@@ -1,16 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+/* import App from './App'; */
 import * as serviceWorker from './serviceWorker';
 import store from './store';
 import Spinner from './Spinner';
-import spinnerActionCreators from './Spinner/actions';
 import { Provider } from 'react-redux';
 import BugTracker from './bugTracker';
-
-import axios from 'axios';
-window['axios'] = axios;
 
 ReactDOM.render(
   <Provider store={store}>
