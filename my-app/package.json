@@ -20,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:integration": "jest -c integration/jest.config.js",
+    "test:integrationWithWatch": "jest -c integration/jest.config.js --watch"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,5 +38,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^5.3.0"
   }
 }

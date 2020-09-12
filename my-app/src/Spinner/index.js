@@ -16,13 +16,13 @@ const Spinner = () => {
       <label>Delta : </label>
       <input
         type="number"
-        value={delta}
+        id="txtDelta"
         onChange={evt => setDelta(parseInt(evt.target.value) || 0)}
       />
       <br />
-      <input type="button" value="Down" onClick={() => dispatch(down(delta))} />
-      <span> [ {value} ] </span>
-      <input type="button" value="Up" onClick={() => dispatch(up(delta))} />
+      <button id="btnDown" onClick={() => dispatch(down(delta))}>Down</button>
+      <span id="spanResult"> [ {value} ] </span>
+      <button id="btnUp" onClick={() => dispatch(up(delta))}>Up</button>
     </div>
   );
 }

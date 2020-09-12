@@ -3,7 +3,7 @@ import bugApi from '../services/bugApi';
 
 jest.mock('../services/bugApi');
 
- test('load dispatches the action', async () => {
+test('load dispatches the action', async () => {
      //Arrange
     const mockDispatch = jest.fn();
     bugApi.getAll.mockResolvedValue('Dummy Data');
