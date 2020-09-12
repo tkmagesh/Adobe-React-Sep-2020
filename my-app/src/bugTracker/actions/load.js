@@ -77,10 +77,18 @@ const load = async () => {
 
 import bugApi from '../services/bugApi';
 
-const load = () => async (dispatch) => {
+/* const load = () => async (dispatch) => {
   const bugs = await bugApi.getAll();
   const action = { type: "LOAD_BUGS", payload: bugs};
   dispatch(action);
+} */
+
+function load(){
+  return async function (dispatch){
+    const bugs = await bugApi.getAll();
+    const action = { type: "LOAD_BUGS", payload: bugs };
+    dispatch(action);
+  }
 }
 
 export default load;
