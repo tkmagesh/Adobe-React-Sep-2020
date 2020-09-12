@@ -328,14 +328,14 @@ Middlewares in Redux
 
 Assignment:
     
-    Implement pagination for bugs
+    1. Adding, and Listing for projects
 
-    Adding, and Listing for projects
-
-    Display the projects in the bugEdit component (in the dropdown list box)
+    2. Display the projects in the bugEdit component (in the dropdown list box)
         so that a bug can be created for a particular project
         the bug data will have the corresponding project_id
 
-    Each project (in projects module) should display a link (...Bugs)
+    3. Each project (in projects module) should display a link (...Bugs)
         when this link is clicked, navigate to the bugTracker module displaying ONLY the bugs for the selected project
+
+    4. Implement pagination for bugs
 

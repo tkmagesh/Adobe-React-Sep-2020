@@ -14,10 +14,10 @@ const BugTracker = () => {
     const dispatch = useDispatch();
     const { load, addNew, toggle, remove, removeClosed } = bugActionCreators;
     
-    useEffect(() => {
+    /* useEffect(() => {
         dispatch(load());
     }, [dispatch, load]);
-
+ */
     return(
         <Fragment>
             <h3>Bug Tracker</h3>

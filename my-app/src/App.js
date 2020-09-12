@@ -1,16 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
-import TimerContainer from './Timer';
+import Spinner from "./Spinner";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from './home';
+import BugTracker from "./bugTracker";
+import Projects from "./projects";
+import bugActionActionCreators from './bugTracker/actions';
+import { useDispatch } from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() =>{
+    dispatch(bugActionActionCreators.load());
+  },[dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <TimerContainer/>
-      </header>
-    </div>
+    <Router>
+      <h1>My App</h1>
+      <div>
+        <span>
+          {" "}
+          [ <Link to="/home">Home</Link> ]{" "}
+        </span>
+        <span>
+          {" "}
+          [ <Link to="/spinner">Spinner</Link> ]{" "}
+        </span>
+        <span>
+          {" "}
+          [ <Link to="/bugs">Bugs</Link> ]{" "}
+        </span>
+        <span>
+          {" "}
+          [ <Link to="/projects">Projects</Link> ]{" "}
+        </span>
+      </div>
+      <hr />
+      <Switch>
+        <Route path="/projects">
+          <Projects />
+        </Route>
+        <Route path="/bugs">
+          <BugTracker />
+        </Route>
+        <Route path="/spinner">
+          <Spinner />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
