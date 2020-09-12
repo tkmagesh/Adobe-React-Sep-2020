@@ -18,6 +18,7 @@ const BugItem = ({bug, toggle, remove}) => {
           value="Remove"
           onClick={() => dispatch(remove(bug))}
         />
+        <div>Project Id - [ {bug.projectId} ]</div>
       </li>
     );
 }

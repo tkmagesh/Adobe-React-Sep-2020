@@ -30,4 +30,9 @@ async function remove(bugData){
     return response.data;
 }
 
-export default { getAll, get, save, remove };
+async function getForProject(projectId){
+    const response = await axiosInstance.get(`/bugs?projectId=${projectId}`);
+    return response.data;
+}
+
+export default { getAll, get, save, remove, getForProject };

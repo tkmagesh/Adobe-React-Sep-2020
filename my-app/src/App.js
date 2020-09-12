@@ -9,11 +9,6 @@ import bugActionActionCreators from './bugTracker/actions';
 import { useDispatch } from 'react-redux';
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() =>{
-    dispatch(bugActionActionCreators.load());
-  },[dispatch]);
-
   return (
     <Router>
       <h1>My App</h1>
@@ -37,17 +32,27 @@ function App() {
       </div>
       <hr />
       <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/home">
+          <Home />
+        </Route>
         <Route path="/projects">
           <Projects />
         </Route>
-        <Route path="/bugs">
+
+        <Route exact path="/bugs">
           <BugTracker />
+        </Route>
+        <Route path="/bugs/projects/:id">
+          <div>
+            <p>Bugs for a project</p>
+            <BugTracker />
+          </div>
         </Route>
         <Route path="/spinner">
           <Spinner />
-        </Route>
-        <Route path="/">
-          <Home />
         </Route>
       </Switch>
     </Router>

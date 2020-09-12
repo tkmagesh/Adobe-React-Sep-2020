@@ -1,11 +1,21 @@
 import React, {Fragment} from 'react';
+import { Link } from 'react-router-dom';
 
-const Projects  = () => (
-    <Fragment>
-        <h3>Projects</h3>
-        <hr/>
-        <p>Consequat ullamco veniam nisi ullamco deserunt. Nisi in cillum irure proident anim tempor officia ipsum Lorem irure. Ad id sunt veniam pariatur amet aute cupidatat. Ex commodo enim cupidatat officia elit consectetur est. Ut nulla exercitation elit Lorem excepteur anim pariatur pariatur in nisi adipisicing nulla. Occaecat aliqua tempor enim ipsum anim ea.</p>
-    </Fragment>
-)
+const Projects = () => (
+  <Fragment>
+    <h3>Projects</h3>
+    <hr />
+    <ol>
+      <li>
+        <div>Project - 1</div>
+        <Link to="/bugs/projects/1">...Bugs</Link>
+      </li>
+      <li>
+        <div>Project - 2</div>
+        <Link to="/bugs/projects/2">...Bugs</Link>
+      </li>
+    </ol>
+  </Fragment>
+);
 
 export default Projects;
